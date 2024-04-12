@@ -1,6 +1,8 @@
 <?php
 
 $message = "Hello PHP";
+var_dump($_GET);
+$word = "$_GET[word]"
 
 ?>
 
@@ -13,6 +15,13 @@ $message = "Hello PHP";
     <title>Php - Badwords</title>
 </head>
 <body>
-    <h1><?php echo $message ?></h1>
+    <h1><?php echo $word ?></h1>
+
+    <form action="" method="get">
+        <input type="text" placeholder="Inserisci un paragrafo..." name="word">
+        <input type="text" placeholder="Dimmi una parolaccia...">
+        <button type="submit">Invia</button>
+    </form>
+
 </body>
 </html>
