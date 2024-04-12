@@ -9,7 +9,7 @@ $badword = "$_GET[badword]";
 //$censored_text = str_replace(strtolower($badword), "***", strtolower($paragraph_text));
 $censored_text = str_ireplace($badword, "***", $paragraph_text);
 
-    ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +37,7 @@ $censored_text = str_ireplace($badword, "***", $paragraph_text);
     <div class="container">
 
         <div class="outputs border border-1 p-2">
-
+            <p>Il tuo testo è:</p>
             <h1><?php echo $paragraph_text ?></h1>
             <h2>Il paragrafo contiene: <?php echo strlen($paragraph_text) ?> lettere</h2>
 
@@ -46,11 +46,28 @@ $censored_text = str_ireplace($badword, "***", $paragraph_text);
 
         <div class="outputs mt-5  border border-1 p-2">
 
-
+            <p>Il tuo testo censurato è:</p>
             <h1><?php echo $censored_text; ?></h1>
             <h2>Il paragrafo contiene: <?php echo strlen($censored_text) ?> lettere</h2>
 
         </div>
+
+        <div class="outputs mt-5  border border-1 p-2">
+
+            <p>Il tuo testo censurato al contrario è:</p>
+            <h1><?php echo strrev($censored_text); ?></h1>
+            <h2>Il paragrafo contiene: <?php echo strlen($censored_text) ?> lettere</h2>
+
+        </div>
+
+        <div class="outputs mt-5  border border-1 p-2">
+
+            <p>Il tuo testo censurato al contrario che va a capo ogni 10 caratteri è:</p>
+            <h1><?php echo wordwrap(strrev($censored_text),10, "<br />\n"); ?></h1>
+            <h2>Il paragrafo contiene: <?php echo strlen($censored_text) ?> lettere</h2>
+
+        </div>
+
 
     </div>
 
