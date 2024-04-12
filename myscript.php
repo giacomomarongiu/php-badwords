@@ -19,7 +19,7 @@ $badword = "$_GET[badword]";
     
     <h1><?php echo $paragraph_text ?></h1>
     <h1>Il paragrafo contiene: <?php echo strlen($paragraph_text) ?> parole</h1>
-    <h1><?php echo str_replace($badword, "***", $paragraph_text) ?></h1>
+    <h1><?php echo str_replace(strtolower($badword), "***", strtolower($paragraph_text)); ?></h1>
 
 </body>
 </html>
