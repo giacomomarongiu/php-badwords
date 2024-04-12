@@ -6,7 +6,8 @@
 var_dump($_GET);
 $paragraph_text = "$_GET[paragraph_text]";
 $badword = "$_GET[badword]";
-$censored_text = str_replace(strtolower($badword), "***", strtolower($paragraph_text))
+//$censored_text = str_replace(strtolower($badword), "***", strtolower($paragraph_text));
+$censored_text = str_ireplace($badword, "***", $paragraph_text);
 
     ?>
 
@@ -35,7 +36,7 @@ $censored_text = str_replace(strtolower($badword), "***", strtolower($paragraph_
     </header>
     <div class="container">
 
-        <div class="outputs">
+        <div class="outputs border border-1 p-2">
 
             <h1><?php echo $paragraph_text ?></h1>
             <h2>Il paragrafo contiene: <?php echo strlen($paragraph_text) ?> lettere</h2>
@@ -43,7 +44,7 @@ $censored_text = str_replace(strtolower($badword), "***", strtolower($paragraph_
 
         </div>
 
-        <div class="outputs mt-5">
+        <div class="outputs mt-5  border border-1 p-2">
 
 
             <h1><?php echo $censored_text; ?></h1>
