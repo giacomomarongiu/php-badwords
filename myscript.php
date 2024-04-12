@@ -9,7 +9,9 @@ $badword = "$_GET[badword]";
 //$censored_text = str_replace(strtolower($badword), "***", strtolower($paragraph_text));
 $censored_text = str_ireplace($badword, "***", $paragraph_text);
 
-?>
+//Variabile numerica
+$bigger_paragraph = max(strlen($paragraph_text), strlen($censored_text))
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -63,8 +65,20 @@ $censored_text = str_ireplace($badword, "***", $paragraph_text);
         <div class="outputs mt-5  border border-1 p-2">
 
             <p>Il tuo testo censurato al contrario che va a capo ogni 10 caratteri è:</p>
-            <h1><?php echo wordwrap(strrev($censored_text),10, "<br />\n"); ?></h1>
+            <h1><?php echo wordwrap(strrev($censored_text), 10, "<br />\n"); ?></h1>
             <h2>Il paragrafo contiene: <?php echo strlen($censored_text) ?> lettere</h2>
+
+        </div>
+
+        <div class="outputs mt-5  border border-1 p-2">
+
+            <p>Il tuo testo più lungo tra censurato e non censurato è lungo:</p>
+            <h1><?php echo $bigger_paragraph ?></h1>
+            <p>Il cui Algortimo Naturale è</p>
+            <h1><?php echo log($bigger_paragraph) ?></h1>
+            <p>Con soli due decimali:</p>
+            <h1><?php echo number_format(log($bigger_paragraph), 2) ?></h1>
+
 
         </div>
 
