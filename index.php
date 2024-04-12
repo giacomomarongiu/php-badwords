@@ -1,13 +1,3 @@
-<?php
-
-//$message = "Hello PHP";
-
-var_dump($_GET);
-$paragraph_text = "$_GET[paragraph_text]";
-$badword = "$_GET[badword]";
-
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,15 +7,12 @@ $badword = "$_GET[badword]";
     <title>Php - Badwords</title>
 </head>
 <body>
-    <h1><?php echo $paragraph_text ?></h1>
-    <h1>Il paragrafo contiene: <?php echo strlen($paragraph_text) ?> parole</h1>
-    <h1><?php echo str_replace($badword, "***", $paragraph_text) ?></h1>
-
     <form action="myscript.php" method="get">
-        <textarea name="paragraph_text" cols="50" rows="10"></textarea><br><br>
+        <label for="paragraph_text">Inserisci qui il paragrafo</label><br>
+        <textarea cols="50" rows="10" name="paragraph_text" ></textarea><br><br>
+        <label for="badword">Inserisci una parola da censurare: </label>
         <input type="text" placeholder="Dimmi una parolaccia..." name="badword">
         <button type="submit">Invia</button>
     </form>
-
 </body>
 </html>
