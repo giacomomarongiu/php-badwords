@@ -27,6 +27,7 @@ $bigger_paragraph = max(strlen($paragraph_text), strlen($censored_text))
 </head>
 
 <body>
+    <!--Nav-->
     <header class="mb-3">
         <nav class="navbar bg-warning">
             <div class="container-fluid justify-content-center">
@@ -36,8 +37,10 @@ $bigger_paragraph = max(strlen($paragraph_text), strlen($censored_text))
             </div>
         </nav>
     </header>
+
     <div class="container">
 
+        <!--Results-->
         <div class="outputs border border-1 p-2">
             <p>Il tuo testo è:</p>
             <h1><?php echo $paragraph_text ?></h1>
